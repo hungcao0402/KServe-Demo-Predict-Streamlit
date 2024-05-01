@@ -6,10 +6,10 @@ import io
 from PIL import Image
 import os
 
-st.set_page_config(page_title="Speech to Text")
+st.set_page_config(page_title="Ancestry PCA")
 
-st.markdown("# Speech to Text")
-st.sidebar.header("Speech to Text")
+st.markdown("# Ancestry")
+st.sidebar.header("Ancestry")
 st.write(
     """Kiểm tra nguồn gốc quần thể (%) của một hoặc nhiều mẫu đã có trong dữ liệu
 1000 Hệ gen thế giới (1KGP). Ngoài ra có thể chọn trực quan hóa các quần thể người

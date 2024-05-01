@@ -9,7 +9,7 @@ import numpy as np
 from cv2 import imread, resize
 import cv2
 
-st.set_page_config(page_title="EEG")
+st.set_page_config(page_title="SkinCancer")
 
 st.markdown("# Mô hình học máy trên dữ liệu hình ảnh bệnh da liễu")
 st.sidebar.header("Mô hình học máy trên dữ liệu hình ảnh bệnh da liễu")
