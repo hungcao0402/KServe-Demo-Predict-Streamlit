@@ -1,6 +1,7 @@
 # Streamlit App README
+This repository contains a Streamlit application that serves as a demonstration of sending prediction requests to the InferenceService using KServe in a Kubeflow environment. 
 
-This repository contains a Streamlit application featuring five pages: Ancestry, EEG, Heart Disease, Skin Cancer, and Speech-to-Text. Each page provides specific functionalities and insights related to its respective topic.
+The Streamlit app features five pages: Ancestry, EEG, Heart Disease, Skin Cancer, and Speech-to-Text. Each page provides specific functionalities and insights related to its respective topic.
 
 ## Usage
 
