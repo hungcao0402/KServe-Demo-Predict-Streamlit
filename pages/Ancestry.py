@@ -39,12 +39,13 @@ def ancestry(population, superpopulation, user, endpoint, host, token):
     response = requests.post(endpoint, headers=headers, json=payload)
 
     if response.status_code == 200:
-        image_buffer = io.BytesIO(base64.b64decode(response.json()['predictions']['b64']))
+        ancestry_result = response.json()['predictions']['ancestry']
 
+        image_buffer = io.BytesIO(base64.b64decode(response.json()['predictions']['b64']))
         im = Image.open(image_buffer)
         im = im.convert("RGB")
 
-        return im
+        return im, ancestry_result
     else:
         return f"Error: Failed to convert audio to text ({response.status_code})"
 
@@ -58,8 +59,12 @@ superpopulation = st.text_input('Superpopulation:', 'EUR EAS AFR SAS AMR')
 user = st.text_input('User:', 'HG01595 HG01607 HG03702 HG03078')
 
 if st.button('Submit'):
-    img = ancestry(population, superpopulation, user, ENDPOINT, SERVICE_HOSTNAME, TOKEN)
-    st.image(img, use_column_width=True)
+    img, ancestry_result = ancestry(population, superpopulation, user, ENDPOINT, SERVICE_HOSTNAME, TOKEN)
+    
+    if ancestry_result:
+        for item in ancestry_result:
+            st.write(item)
 
+    st.image(img, use_column_width=True)
 
 
